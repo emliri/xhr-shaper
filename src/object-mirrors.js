@@ -1,10 +1,8 @@
 'use strict';
 
-var ERROR_SOURCE_PROPERTY_NOT_IMPLEMENTED = 'Requiring undefined property on source object';
-
 function checkProperty(source, prop) {
     if (typeof source[prop] === 'undefined') {
-        throw new Error(ERROR_SOURCE_PROPERTY_NOT_IMPLEMENTED + ': ' + prop);
+        throw new Error('Accessing unsupported property on source object: ' + prop);
     }
 }
 
@@ -45,14 +43,20 @@ function mirrorRwProp(target, source, prop, setterHook, getterHook) {
             return readProperty(target, source, prop, getterHook);
         },
         set: function(val) {
-            return writeProperty(val, target, source, prop, setterHook);
+            writeProperty(val, target, source, prop, setterHook);
         },
         configurable: true
     });
 }
 
-function mirrorFunc(target, source, func) {
+function mirrorFunc(target, source, func, funcHook) {
     target[func] = function() {
+        if (funcHook) {
+            var result = funcHook(target, source, func);
+            if (result.override) {
+                return result.value;
+            }
+        }
         checkProperty(source, func);
         return source[func].apply(source, arguments);
     };
