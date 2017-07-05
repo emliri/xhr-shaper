@@ -1,6 +1,6 @@
 {
   "name": "xhr-shaper",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Shapes your XHR requests to a max emulated bandwidth and latency, randomizes frequency of progress events",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,9 @@
     "dev": "./node_modules/.bin/webpack-dev-server --port 8090",
     "lint": "./node_modules/.bin/eslint .",
     "start": "npm run dev",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "release-patch": "./node_modules/.bin/release-it patch",
+    "release-minor": "./node_modules/.bin/release-it minor"
   },
   "keywords": [
     "Network",
@@ -31,6 +33,7 @@
     "babel-preset-env": "^1.5.1",
     "eslint": "^3.1.1",
     "eslint-config-streamroot": "^1.0.3-beta",
+    "release-it": "2.8.0",
     "webpack": "2.6.1",
     "webpack-dev-server": "2.4.5"
   }
