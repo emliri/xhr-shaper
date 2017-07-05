@@ -1,4 +1,7 @@
 # xhr-shaper
+
+https://tchakabam.github.io/xhr-shaper/
+
 Shapes your XHR requests to a max emulated bandwidth and latency, randomizes frequency of progress events
 
 ![Screenshot of demo](http://dispar.at/blog/images/xhr-shaper-demo.png)
