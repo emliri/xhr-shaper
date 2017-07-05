@@ -1,6 +1,10 @@
 # xhr-shaper
 Shapes your XHR requests to a max emulated bandwidth and latency, randomizes frequency of progress events
 
+![Screenshot of demo](http://dispar.at/blog/images/xhr-shaper-demo.png)
+
+Blog post: http://dispar.at/blog/2017/06/09/xhr-shaper/
+
 ### Install:
 
 `npm install xhr-shaper`
