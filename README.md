@@ -68,6 +68,10 @@ Run `npm run dev`
 
 Now go to http://localhost:8080/webpack-dev-server/
 
+### Automated BDD testsuite using Mocha.js
+
+go to http://localhost:8080/webpack-dev-server/tests.html
+
 ### TODOs:
 
 * randomizing feature
