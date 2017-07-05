@@ -1,6 +1,6 @@
 XHRShaper.useGlobal();
 
-var DEFAULT_URL = "//www.streambox.fr/playlists/test_001/stream_110k_48k_416x234_000.ts";
+var DEFAULT_URL = "https://tchakabam.github.io/xhr-shaper/data/chunk.ts";
 
 var stats;
 var requestActive = false;
